@@ -98,8 +98,10 @@ var p=1;
 var b=1;
 for(var i=0;i<finances.length;i++){
     months++;
-    
+//combined profits from all months
     profitsum+=finances[i][1];
+
+// checking for biggest profit
     if(p<finances.length-1){
         comp1=finances[p][1];      
         comp2=finances[i][1];
@@ -113,7 +115,7 @@ for(var i=0;i<finances.length;i++){
         
         
     }
-
+// checking for biggest loss
     if(b<finances.length-1){
         comp3=finances[b][1];      
         comp4=finances[i][1];
@@ -129,7 +131,7 @@ for(var i=0;i<finances.length;i++){
     }
     
 }
-
+// calculating average profit
 var avrg=((profitsum/finances.length).toFixed(2));
 
 console.log("Financial Analysis");
