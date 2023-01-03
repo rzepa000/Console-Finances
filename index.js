@@ -86,3 +86,57 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+var months=finances.length;
+var profitsum=0;
+var maxprofit=finances[0][1];
+var minprofit=finances[0][1];
+var comp1=0;
+var comp2=0;
+var comp3=0;
+var comp4=0;
+var p=1;
+var b=1;
+for(var i=0;i<finances.length;i++){
+    months++;
+    
+    profitsum+=finances[i][1];
+    if(p<finances.length-1){
+        comp1=finances[p][1];      
+        comp2=finances[i][1];
+        if( comp2 < comp1){
+        maxprofit=finances[p];
+        
+        }else if(comp2 > comp1){
+            p++;
+        }
+          
+        
+        
+    }
+
+    if(b<finances.length-1){
+        comp3=finances[b][1];      
+        comp4=finances[i][1];
+        if( comp2 > comp1){
+        minprofit=finances[b];
+        
+        }else if(comp2 < comp1){
+            b++;
+        }
+          
+        
+        
+    }
+    
+}
+
+var avrg=((profitsum/finances.length).toFixed(2));
+
+console.log("Financial Analysis");
+console.log("----------------------------");
+console.log("Total Months: " + finances.length);
+console.log("Total: $" + profitsum);
+console.log("Average profit/loss: $" + avrg);
+console.log("Greatest Increase in Profits: " + maxprofit)
+console.log("Greatest Decrease in Profits: " + minprofit)
+
